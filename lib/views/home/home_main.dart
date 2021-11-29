@@ -1,20 +1,15 @@
 
-
 import 'dart:ui';
-
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:movie2/controllers/actorsController.dart';
 import 'package:movie2/views/home/lastMovies.dart';
-// import 'package:movie2/views/home/trandingTitle.dart';
 import 'package:movie2/views/home/trandingItems.dart';
 import 'package:movie2/views/home/userInfo.dart';
-
+import 'CategoriItems.dart';
 import 'actors.dart';
 import 'topActor.dart';
 
-// import 'lastMovies.dart';
 
 class Home extends StatelessWidget {
     Home({Key? key}) : super(key: key);
@@ -57,6 +52,10 @@ class Home extends StatelessWidget {
 
         CategoriTitle(),
 
+        categoriesItems(),
+
+        LatMovieTitle(),
+
         LastMovies(),
 
         TrendingTitle(),
@@ -65,7 +64,7 @@ class Home extends StatelessWidget {
 
         Actors(),
 
-        TitleTopActorTitle(),
+        TopActorTitle(),
 
         TopActor(),
 
@@ -75,7 +74,18 @@ class Home extends StatelessWidget {
  // tlg : @mr_roz
 }
 
+LatMovieTitle() {
 
+  return Padding(
+    padding:  EdgeInsets.all( Get.width*.03),
+    child: Container(
+      //margin: EdgeInsets.only(top: Get.width*.01,bottom: Get.width*.01),
+      // color: Colors.blue,
+      height: Get.width*.1,
+      child: Text('Last Movies',style: TextStyle(color: Colors.white,fontSize: Get.width*.06),),
+    ),
+  );
+}
 
 
  TrendingTitle () {
@@ -117,7 +127,7 @@ class Home extends StatelessWidget {
 }
 
 
-TitleTopActorTitle() {
+TopActorTitle() {
   return Container(
     height: Get.width*.1,
     //color: Colors.cyanAccent,

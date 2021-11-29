@@ -22,8 +22,9 @@ linter:
   # `// ignore_for_file: name_of_lint` syntax on the line or in the file
   # producing the lint.
   rules:
-#    prefer_const_constructors:
-#    unnecessary_brace_in_string_interps:
+    prefer_const_constructors:
+    unnecessary_brace_in_string_interps:
+    prefer_const_constructors_in_immutables:
     #unnecessary_const: false
     #unnecessary_getters_setters: false
     #unnecessary_new: false

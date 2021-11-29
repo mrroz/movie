@@ -15,6 +15,8 @@ class TopActor extends StatelessWidget {
 
    @override
   Widget build(BuildContext context) {
+
+     print(TopActor);
     return Container(
       height:Get.width*.5,
       child: Stack(children: [
