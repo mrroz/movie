@@ -19,7 +19,7 @@ class TopActor extends StatelessWidget {
       height:Get.width*.5,
       child: Stack(children: [
 
-        Container(
+        SizedBox(
           height:Get.width*.5,
           child: Stack(
             children: [
@@ -43,7 +43,7 @@ class TopActor extends StatelessWidget {
         ),
         
         FadeInLeftBig(
-          duration: Duration(seconds: 5),
+          duration: Duration(seconds: 3),
           child: Container(
             child: ListView.builder(
               reverse: true,
