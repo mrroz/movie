@@ -143,18 +143,21 @@ coverInfo(wi) {
             Expanded(
                 flex: 3,
                 child: Container(
+                  margin: EdgeInsets.only(bottom:wi*.19),
                   //color: Colors.blue,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
+                  child: SingleChildScrollView(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
 
-                      time(wi,'1h 5m'),
-                      ganer(wi,'Mystery/Thriller'),
-                      tags(wi),
-                      rateCard(wi,'5.8/10','imbd'),
-                      rateCard(wi,'26%','rotten'),
+                        time(wi,'1h 5m'),
+                        ganer(wi,'Mystery/Thriller'),
+                        tags(wi),
+                        rateCard(wi,'5.8/10','imbd'),
+                        rateCard(wi,'26%','rotten'),
 
-                    ],),
+                      ],),
+                  ),
                 )),
 
           ],
