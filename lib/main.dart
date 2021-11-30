@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import 'views/home/home_main.dart';
+import 'views/infoItem/infoItem_main.dart';
 
 void main() {
   runApp( MyApp());
@@ -22,6 +23,7 @@ class MyApp extends StatelessWidget {
       getPages: [
 
         GetPage(name: "/Home", page: ()=> Home()),
+        GetPage(name: "/Home", page: ()=> infoItem()),
         // GetPage(name: "/pageLogin", page: ()=> Login()),
         // GetPage(name: "/pageHome", page: ()=> SplashScreen())
       ],

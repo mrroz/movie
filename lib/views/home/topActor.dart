@@ -51,15 +51,20 @@ class TopActor extends StatelessWidget {
               scrollDirection: Axis.horizontal,
                 itemBuilder:(context, index){
                   var top = actorsCont.topActor[index];
-                  return Container(
-                    margin: EdgeInsets.only(right:Get.width*.07),
-                    child: CircleAvatar(
-                      backgroundImage:ExactAssetImage(top['image']) ,
-                      radius: Get.width*.15,
-                      backgroundColor: Colors.cyanAccent,
-                      child: Text(top['name'],style: TextStyle(backgroundColor: Colors.black54,color: Colors.white),),
+                  return Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                    Container(
+                      margin: EdgeInsets.only(right:Get.width*.03),
+                      child: CircleAvatar(
+                        backgroundImage:ExactAssetImage(top['image']) ,
+                        radius: Get.width*.15,
+                        backgroundColor: Colors.cyanAccent,
+                      ),
                     ),
-                  );
+                    Center(child: Text(top['name'],style: TextStyle(backgroundColor: Colors.black87,color: Colors.white),)),
+
+                  ],);
                 },
             ),
           ),

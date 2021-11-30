@@ -1,19 +1,20 @@
-
 import 'dart:ui';
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:movie2/controllers/searchController.dart';
 import 'package:movie2/views/home/lastMovies.dart';
 import 'package:movie2/views/home/trandingItems.dart';
 import 'package:movie2/views/home/userInfo.dart';
 import 'CategoriItems.dart';
 import 'actors.dart';
 import 'topActor.dart';
+import 'package:anim_search_bar/anim_search_bar.dart';
 
 
 class Home extends StatelessWidget {
     Home({Key? key}) : super(key: key);
-
+    SearchController searchCont = Get.put(SearchController());
 
 
    @override
@@ -25,8 +26,20 @@ class Home extends StatelessWidget {
        title: Text('Movie land',style: TextStyle(fontSize: Get.width*.05),),
        actions: [
          Container(
-           margin: EdgeInsets.only(right: Get.width*.03),
-           child: Icon(Icons.search_sharp,size: Get.width*.075),
+
+           //color: Colors.lime,
+            margin: EdgeInsets.only(right: Get.width*.02),
+           child: AnimSearchBar(
+             style: TextStyle(color: Colors.white,fontSize: Get.width*.04),
+             color: Colors.blueGrey.shade900,
+             width: Get.width*.82,
+             textController: searchCont.textController,
+             onSuffixTap: () {
+
+               searchCont.textController.clear();
+
+             },
+           ),
          )
        ],
        backgroundColor: Colors.black,
@@ -54,13 +67,16 @@ class Home extends StatelessWidget {
 
         categoriesItems(),
 
-        LatMovieTitle(),
+        LastMovieTitle(),
 
         LastMovies(),
+
+        Dived(),
 
         TrendingTitle(),
 
         TrendingItems(),
+        Dived(),
 
         Actors(),
 
@@ -71,10 +87,19 @@ class Home extends StatelessWidget {
       ],
     );
   }
+
+
  // tlg : @mr_roz
 }
 
-LatMovieTitle() {
+Dived() {
+
+  return Container(
+      margin: EdgeInsets.only(left: Get.width*.05,right: Get.width*.05),
+      child: Divider(color: Colors.white54,height: Get.width*.015,));
+}
+
+LastMovieTitle() {
 
   return Padding(
     padding:  EdgeInsets.all( Get.width*.03),
@@ -131,6 +156,6 @@ TopActorTitle() {
   return Container(
     height: Get.width*.1,
     //color: Colors.cyanAccent,
-    child: Center(child: Text('Top actor of week',style: TextStyle(fontSize:Get.width*.05 ,color: Colors.amber),)),
+    child: Center(child: Text('Top actor of week',style: TextStyle(fontSize:Get.width*.05 ,color: Colors.lime.shade200),)),
   );
 }

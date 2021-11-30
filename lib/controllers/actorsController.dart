@@ -38,7 +38,7 @@ import 'package:get/get.dart';
 
    RxList topActor = [
      {
-       'name':'jakson',
+       'name':'impossible 1',
        'image':'assets/images/tom1.jpg',
      },
 
@@ -47,7 +47,7 @@ import 'package:get/get.dart';
        'image':'assets/images/tom2.jpg',
      },
      {
-       'name':'tom',
+       'name':'impossible 5',
        'image':'assets/images/tom3.jpg',
      },
      {

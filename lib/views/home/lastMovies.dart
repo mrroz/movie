@@ -29,8 +29,8 @@ class LastMovies extends StatelessWidget {
               padding: const EdgeInsets.all(8.0),
               child: GestureDetector(
                 onTap: (){
-                  Get.to(const infoItem(),
-                    transition: Transition.rightToLeftWithFade,);},
+                  Get.to( infoItem(),
+                    transition: Transition.rightToLeftWithFade,duration: Duration(milliseconds: 500));},
                 child: Container(
                   width: Get.width*.5,
                   color: Colors.black,
