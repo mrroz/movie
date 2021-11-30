@@ -3,7 +3,7 @@
 // ignore_for_file: file_names, camel_case_types
 
 import 'package:get/get.dart';
- // ignore: camel_case_types
+
 
  class actorsController extends GetxController {
 

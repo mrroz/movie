@@ -5,7 +5,6 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:movie2/controllers/actorsController.dart';
 
 class TrendingTitel extends StatelessWidget {
   TrendingTitel({Key? key}) : super(key: key);

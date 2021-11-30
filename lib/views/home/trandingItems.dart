@@ -12,9 +12,7 @@ import 'dart:ui';
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:movie2/controllers/lastMoviesController.dart';
 import 'package:movie2/controllers/trendingController.dart';
-import 'package:movie2/views/infoItem/infoItem_main.dart';
 
 class TrendingItems extends StatelessWidget {
 
@@ -24,12 +22,14 @@ class TrendingItems extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    //var wi = Get.width;
+   var wi = Get.width;
     return FadeInLeft(
       duration:const Duration(seconds: 1),
-      child: SizedBox(
-        height: Get.width*.41 ,
+      child: Container(
+        height: Get.width*.30 ,
         width: Get.width,
+        //color: Colors.blue,
+
         child: Stack(
           children: [
             Obx(() => Padding(
@@ -40,12 +40,14 @@ class TrendingItems extends StatelessWidget {
                 itemBuilder: (context, index) {
                   var trends =trendingItems.trendItems[index];
                   return Container(
-                    margin:EdgeInsets.only(right: Get.width*.01) ,
+                    margin: EdgeInsets.all(wi*.01),
+                  //  color: Colors.amber,
+                    width: wi*.7,
                     child: Stack(
                       children: [
 
-                       infoPanel(trends),
-                       rate(trends),
+                        infoPanel(trends,wi),
+                        rate(trends,wi),
 
                       ],
                     ),
@@ -82,19 +84,18 @@ swip() {
 }
 
 
-infoPanel(trends) {
+infoPanel(trends,wi) {
+
+//  var wi = Get.width;
 
   return  Container(
-    height: Get.width ,
-    width:  Get.width ,
-    //  color: Colors.purple,
+
+  // color: Colors.purple,
     child: Row(
       children: [
         Expanded(
             flex: 5,
             child: Container(
-              width: Get.width * .4,
-              height: Get.width * .4,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(11),
                   image: DecorationImage(image: ExactAssetImage(trends['image']),fit: BoxFit.cover,)
@@ -107,26 +108,28 @@ infoPanel(trends) {
                 child: Column(
                   children: [
                     Expanded(
-                        flex: 2,
-                        child: FadeInRight(child: Container(
-//  color: Colors.yellow,
-                          margin: EdgeInsets.all(Get.width * .01),
-                          child: Row(
-                            mainAxisAlignment:
-                            MainAxisAlignment.spaceBetween,
-                            children: [
-                              Align(
-                                  alignment: Alignment.centerLeft,
-                                  child: Column(
+                        flex: 3,
+                        child: FadeInRight(
+                            child: Container(
+                              //color: Colors.yellow,
+
+                           margin: EdgeInsets.only(left: wi * .02),
+                                   child: Row(
+                                    mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
                                     children: [
-                                      Text(
+                                     Align(
+                                     alignment: Alignment.centerLeft,
+                                     child: Column(
+                                      children: [
+                                       Text(
                                         trends['name'],
                                         style: TextStyle(
                                             fontWeight:
                                             FontWeight.bold,
                                             color: Colors.white,
                                             fontSize:
-                                            Get.width * .055),
+                                            wi * .055),
                                       ),
                                       Text(
                                         trends['time'],
@@ -136,10 +139,13 @@ infoPanel(trends) {
                                             color: Colors.tealAccent
                                                 .withOpacity(.4),
                                             fontSize:
-                                            Get.width * .042),
+                                            wi * .042),
                                       ),
                                     ],
                                   )),
+                                     Align(
+                                     alignment: Alignment.topRight,
+                                     child: Icon(Icons.bookmark_border,color: Colors.white54,)),
 
                             ],
                           ),
@@ -150,13 +156,15 @@ infoPanel(trends) {
                           alignment: Alignment.centerLeft,
                           child: FadeInLeft(
                             child: Container(
-                              margin: EdgeInsets.all(Get.width * .01),
+                             // color: Colors.pinkAccent,
+                              margin: EdgeInsets.only(left: wi*.02),
+
                               child: Text(
                                 trends['genre'],
                                 style: TextStyle(
                                     fontWeight: FontWeight.bold,
                                     color: Colors.white.withOpacity(.4),
-                                    fontSize: Get.width * .05),
+                                    fontSize: wi * .045),
                               ),
                             ),
                           ),
@@ -164,7 +172,7 @@ infoPanel(trends) {
                     Expanded(
                         flex: 2,
                         child: Container(
-                          margin: EdgeInsets.all(Get.width * .01),
+                          margin: EdgeInsets.all(wi * .01),
                           child: Row(
                             mainAxisAlignment:
                             MainAxisAlignment.center,
@@ -172,9 +180,8 @@ infoPanel(trends) {
                               Container(
                                   margin: EdgeInsets.only(left: 25),
                                   child: Container(
-                                    height: Get.width * .07,
+                                    height:wi * .07,
                                     decoration: BoxDecoration(
-
                                       borderRadius:
                                       BorderRadius.circular(4),
                                       border: Border.all(
@@ -196,7 +203,7 @@ infoPanel(trends) {
                               Container(
                                   margin: EdgeInsets.only(left: 25),
                                   child: Container(
-                                    height: Get.width * .07,
+                                    height: wi * .07,
                                     decoration: BoxDecoration(
                                       borderRadius: BorderRadius.circular(4),
                                       border: Border.all(
@@ -208,7 +215,7 @@ infoPanel(trends) {
                                         child: Text('4K',
                                             style: TextStyle(
                                                 fontSize:
-                                                Get.width * .04,
+                                                wi * .04,
                                                 color:
                                                 Colors.orange,
                                                 fontWeight:
@@ -228,26 +235,22 @@ infoPanel(trends) {
 
 
 
-rate(trends) {
+rate(trends,wi) {
 
   return  Align(
-    alignment: Alignment.topRight,
+    alignment: Alignment.bottomCenter,
     child: Container(
-      width: Get.width,
-      // color: Colors.yellow,
-      child: Center(
-        child: Container(
-          margin: EdgeInsets.only(top: Get.width*.32),
-          height: Get.width*.09,
-          width:  Get.width*.19,
-          color: Colors.orange,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Icon(Icons.star,color: Colors.black,size:Get.width*.065 ,),
-              Text(trends['rate'],style: TextStyle(color: Colors.black,fontSize:Get.width*.056,fontWeight: FontWeight.w700 ),)
-            ],),
-        ),
+      margin: EdgeInsets.only(right: wi*.13 ),
+      width: Get.width*.15,
+      height: Get.width*.07,
+      child: Container(
+        color: Colors.amber,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(Icons.star,color: Colors.black,size:wi*.065 ,),
+            Text(trends['rate'],style: TextStyle(color: Colors.black,fontSize:wi*.05,fontWeight: FontWeight.w700 ),)
+          ],),
       ),
     ),
   );

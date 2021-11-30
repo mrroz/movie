@@ -119,7 +119,7 @@ LatMovieTitle() {
       padding: EdgeInsets.only(left: Get.width*.026),
       // color: Colors.yellowAccent,
       height: Get.width*.09,
-        child: Text('Categori',style: TextStyle(
+        child: Text('Categories',style: TextStyle(
             color: Colors.white,fontSize: Get.width*.06,
             fontWeight: FontWeight.w400,
         ),)),
