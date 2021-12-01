@@ -48,6 +48,7 @@ class TrendingItems extends StatelessWidget {
 
                         infoPanel(trends,wi),
                         rate(trends,wi),
+                        rate(trends,wi),
 
                       ],
                     ),
