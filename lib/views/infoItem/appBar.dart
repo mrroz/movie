@@ -1,21 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import 'infoItem_main.dart';
 
 appbar(wi) {
 
   return Container(
-    height: wi*.2,
+    height: wi*.15,
     // color: Colors.orangeAccent,
     child:  Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
 
-        Container(
-          //  color: Colors.red,
-          width: wi*.2,
-          height: wi*.18,
-          child: topIcon_of__appbar(wi,Icons.arrow_back_ios_sharp),
+        GestureDetector(
+          onTap: ()=>Get.back(),
+          child: Container(
+       //    color: Colors.red,
+            width: wi*.2,
+            height: wi*.18,
+            child: topIcon_of__appbar(wi,Icons.arrow_back_ios_sharp),
+          ),
         ),
 
         Container(

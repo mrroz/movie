@@ -2,6 +2,7 @@ import 'dart:ui';
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:movie2/controllers/categoriesController.dart';
 import 'package:movie2/controllers/searchController.dart';
 import 'package:movie2/views/home/lastMovies.dart';
 import 'package:movie2/views/home/trandingItems.dart';
@@ -15,6 +16,7 @@ import 'package:anim_search_bar/anim_search_bar.dart';
 class Home extends StatelessWidget {
     Home({Key? key}) : super(key: key);
     SearchController searchCont = Get.put(SearchController());
+    // categoriesController  cateCont = Get.put(categoriesController());
 
 
    @override
@@ -25,20 +27,22 @@ class Home extends StatelessWidget {
        centerTitle: true,
        title: Text('Movie land',style: TextStyle(fontSize: Get.width*.05),),
        actions: [
-         Container(
+         FadeInLeftBig(
+           child: Container(
 
-           //color: Colors.lime,
-            margin: EdgeInsets.only(right: Get.width*.02),
-           child: AnimSearchBar(
-             style: TextStyle(color: Colors.white,fontSize: Get.width*.04),
-             color: Colors.blueGrey.shade900,
-             width: Get.width*.82,
-             textController: searchCont.textController,
-             onSuffixTap: () {
+             //color: Colors.lime,
+               margin: EdgeInsets.only(right: Get.width*.02),
+               child: AnimSearchBar(
+               style: TextStyle(color: Colors.white,fontSize: Get.width*.04),
+               color: Colors.blueGrey.shade900,
+               width: Get.width*.82,
+               textController: searchCont.textController,
+               onSuffixTap: () {
 
-               searchCont.textController.clear();
+                 searchCont.textController.clear();
 
-             },
+               },
+             ),
            ),
          )
        ],

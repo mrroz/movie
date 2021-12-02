@@ -10,7 +10,8 @@ import 'package:get/get.dart';
 
 import 'appBar.dart';
 import 'coverInfo.dart';
-import 'tabBarAndvVews.dart';
+import 'tabViews/tabBar.dart';
+import 'tabViews/tabBarViews_Main.dart';
 
 class infoItem extends StatelessWidget {
    infoItem({Key? key}) : super(key: key);
@@ -48,15 +49,5 @@ _body(wi) {
 
 
 
-
-class HomeController extends GetxController with SingleGetTickerProviderMixin {
-  TabController? tabController;
-
-  @override
-  void onInit() {
-    tabController = TabController(vsync: this, length: 3);
-    super.onInit();
-  }
-}
 
 

@@ -3,11 +3,13 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:movie2/controllers/categoriesController.dart';
 
 class categoriesItems extends StatelessWidget {
   categoriesItems({Key? key}) : super(key: key);
+  categoriesController  cateCont = Get.put(categoriesController());
 
-  var select =0.obs ;
+
 
   @override
   Widget build(BuildContext context) {
@@ -19,29 +21,22 @@ class categoriesItems extends StatelessWidget {
           scrollDirection: Axis.horizontal,
           itemCount: 6,
           itemBuilder: (context, index) {
-            return GestureDetector(
+            return Obx(()=>GestureDetector(
               onTap: (){
-                print(index);
-                print('select : $select');
-
-                select.value = index;
-
-                print(select.value);
-
-
+                cateCont.indexCat.value =index;
 
               },
               child: Container(
                 margin: EdgeInsets.only(left: Get.width*.015,right: Get.width*.015),
-                width: Get.width*.21,
-                height:Get.width*.075 ,
+                width: Get.width*.2,
+                height:Get.width*.074 ,
                 decoration: BoxDecoration(
-                    color:index == 0? Colors.amber.shade800:Colors.blueGrey.shade900,
+                    color:cateCont.indexCat.value == index? Colors.amber.shade800:Colors.blueGrey.shade900,
                     borderRadius: BorderRadius.circular(15)
                 ),
-                child: Center(child: Text('Action',style: TextStyle(fontSize: Get.width*.045,color: Colors.white),)),
+                child: Center(child: Text('Action',style: TextStyle(fontSize: Get.width*.045,color: Colors.white,fontWeight: FontWeight.bold),)),
               ),
-            );
+            ));
           },
         ),
       ),

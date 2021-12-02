@@ -22,13 +22,13 @@ class TrendingItems extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-   var wi = Get.width;
-    return FadeInLeft(
+    var wi = Get.width;
+    return FadeInLeftBig(
       duration:const Duration(seconds: 1),
       child: Container(
-        height: Get.width*.30 ,
+        height: Get.width*.30,
         width: Get.width,
-        //color: Colors.blue,
+     //   color: Colors.blue,
 
         child: Stack(
           children: [
@@ -41,7 +41,7 @@ class TrendingItems extends StatelessWidget {
                   var trends =trendingItems.trendItems[index];
                   return Container(
                     margin: EdgeInsets.all(wi*.01),
-                  //  color: Colors.amber,
+                    //  color: Colors.amber,
                     width: wi*.7,
                     child: Stack(
                       children: [
@@ -91,7 +91,7 @@ infoPanel(trends,wi) {
 
   return  Container(
 
-  // color: Colors.purple,
+    // color: Colors.purple,
     child: Row(
       children: [
         Expanded(
@@ -106,6 +106,7 @@ infoPanel(trends,wi) {
         Expanded(
             flex: 6,
             child: Container(
+
                 child: Column(
                   children: [
                     Expanded(
@@ -114,50 +115,50 @@ infoPanel(trends,wi) {
                             child: Container(
                               //color: Colors.yellow,
 
-                           margin: EdgeInsets.only(left: wi * .02),
-                                   child: Row(
-                                    mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                    children: [
-                                     Align(
-                                     alignment: Alignment.centerLeft,
-                                     child: Column(
-                                      children: [
-                                       Text(
-                                        trends['name'],
-                                        style: TextStyle(
-                                            fontWeight:
-                                            FontWeight.bold,
-                                            color: Colors.white,
-                                            fontSize:
-                                            wi * .055),
-                                      ),
-                                      Text(
-                                        trends['time'],
-                                        style: TextStyle(
-                                            fontWeight:
-                                            FontWeight.w700,
-                                            color: Colors.tealAccent
-                                                .withOpacity(.4),
-                                            fontSize:
-                                            wi * .042),
-                                      ),
-                                    ],
-                                  )),
-                                     Align(
-                                     alignment: Alignment.topRight,
-                                     child: Icon(Icons.bookmark_border,color: Colors.white54,)),
+                              margin: EdgeInsets.only(left: wi * .02),
+                              child: Row(
+                                mainAxisAlignment:
+                                MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Align(
+                                      alignment: Alignment.centerLeft,
+                                      child: Column(
+                                        children: [
+                                          Text(
+                                            trends['name'],
+                                            style: TextStyle(
+                                                fontWeight:
+                                                FontWeight.bold,
+                                                color: Colors.white,
+                                                fontSize:
+                                                wi * .055),
+                                          ),
+                                          Text(
+                                            trends['time'],
+                                            style: TextStyle(
+                                                fontWeight:
+                                                FontWeight.w700,
+                                                color: Colors.tealAccent
+                                                    .withOpacity(.4),
+                                                fontSize:
+                                                wi * .042),
+                                          ),
+                                        ],
+                                      )),
+                                  Align(
+                                      alignment: Alignment.topRight,
+                                      child: Icon(Icons.bookmark_border,color: Colors.white54,)),
 
-                            ],
-                          ),
-                        ))),
+                                ],
+                              ),
+                            ))),
                     Expanded(
                         flex: 1,
                         child: Align(
                           alignment: Alignment.centerLeft,
                           child: FadeInLeft(
                             child: Container(
-                             // color: Colors.pinkAccent,
+                              // color: Colors.pinkAccent,
                               margin: EdgeInsets.only(left: wi*.02),
 
                               child: Text(
@@ -256,6 +257,3 @@ rate(trends,wi) {
     ),
   );
 }
-
-
-

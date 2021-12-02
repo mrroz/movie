@@ -3,6 +3,9 @@ import 'package:get/get.dart';
 
 class FavoriteController extends GetxController{
 
-  RxInt liked = 0.obs;
+  var liked = RxnBool(false).obs;
+
+  var itemIndex =  RxnInt().obs;
+
 
 }
