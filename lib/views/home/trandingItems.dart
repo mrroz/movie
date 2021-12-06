@@ -1,18 +1,14 @@
-// ignore: file_names
-// ignore_for_file: file_names, must_be_immutable
 
-// import 'dart:html';
 
-//import 'dart:html';
 
-// import 'dart:html';
-// import 'dart:html';
-// import 'dart:html';
+// ignore_for_file: must_be_immutable
+
 import 'dart:ui';
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:movie2/controllers/trendingController.dart';
+
 
 class TrendingItems extends StatelessWidget {
 
@@ -68,6 +64,7 @@ class TrendingItems extends StatelessWidget {
 
 
 
+
 swip() {
 
   return Align(
@@ -83,6 +80,7 @@ swip() {
     ),
   );
 }
+
 
 
 infoPanel(trends,wi) {
@@ -113,8 +111,6 @@ infoPanel(trends,wi) {
                         flex: 3,
                         child: FadeInRight(
                             child: Container(
-                              //color: Colors.yellow,
-
                               margin: EdgeInsets.only(left: wi * .02),
                               child: Row(
                                 mainAxisAlignment:

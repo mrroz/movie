@@ -23,7 +23,7 @@ tabBarView(wi) {
                 children: <Widget>[
 
                   infoTab(wi),
-                  reviwe(),
+                  review(),
                   awards(),
 
                 ],
