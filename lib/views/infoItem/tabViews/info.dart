@@ -9,30 +9,30 @@ infoTab(wi){
 
   return FadeInUp(
     child: Container(
-      //color: Colors.orangeAccent,
+     // color: Colors.orangeAccent,
       height: wi*.05,
       //width: 25,
       child:ListView(
         children: [
           Container(
             margin: EdgeInsets.all(wi*.02),
-            height: wi*.089,
+            height: wi*.1,
             width: wi*.9,
             // color: Colors.deepOrange,
             child: Text('StoryLine',style: TextStyle(color: Colors.white,fontSize: wi*.06),),
           ),
           Container(
             margin: EdgeInsets.all(wi*.02),
-            // color: Colors.pink,
+             //color: Colors.pink,
             // height:more.value? geDescMore : geDesc,
-            height: wi*.2,
+            height: wi*.4,
             width: wi*.9,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
                     tempText,style: TextStyle(color: Colors.white,fontSize: wi*.04),
-                    maxLines: 3,
+                    maxLines: 6,
                     overflow:TextOverflow.ellipsis
                 ),
                 GestureDetector(
