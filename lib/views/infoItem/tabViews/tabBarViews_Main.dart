@@ -11,13 +11,16 @@ import 'info.dart';
 tabBarView(wi) {
   final controller = Get.put(tabBarController());
 
+  var he = Get.height;
+
   return FadeInUp(
       child:Container(
-        height: wi*.9,
+        height:he*.6,
         child: ListView(
           children: [
             Container(
-              height: wi*.9,
+              //color: Colors.blue,
+              height: he*.7,
               child: TabBarView(
                 controller: controller.tabController,
                 children: <Widget>[

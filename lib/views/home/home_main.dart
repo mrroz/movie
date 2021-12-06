@@ -29,8 +29,6 @@ class Home extends StatelessWidget {
        actions: [
          FadeInLeftBig(
            child: Container(
-
-             //color: Colors.lime,
                margin: EdgeInsets.only(right: Get.width*.02),
                child: AnimSearchBar(
                style: TextStyle(color: Colors.white,fontSize: Get.width*.04),
@@ -47,13 +45,14 @@ class Home extends StatelessWidget {
          )
        ],
        backgroundColor: Colors.black,
-       leading:  Icon(Icons.menu ,size: Get.width*.075,),
+     //  leading:  Icon(Icons.menu ,size: Get.width*.075,),
 
      );
 
     return Scaffold(
       backgroundColor: Colors.black,
       appBar:_appBar ,
+      drawer: drawer(),
       body: SafeArea(child: body()),
     );
   }
@@ -90,6 +89,16 @@ class Home extends StatelessWidget {
 
       ],
     );
+  }
+
+  drawer() {
+
+     return Drawer(
+       child: Container(
+         color: Color(0xff212f3c),
+        // child: Image.asset('assets/images/cap.jpg',fit: BoxFit.cover,),
+       ),
+     );
   }
 
 

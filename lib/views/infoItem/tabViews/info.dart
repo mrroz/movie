@@ -9,7 +9,7 @@ infoTab(wi){
 
   return FadeInUp(
     child: Container(
-      // color: Colors.orangeAccent,
+      //color: Colors.orangeAccent,
       height: wi*.05,
       //width: 25,
       child:ListView(
